@@ -1,0 +1,17 @@
+# echo '\033[5mSet up your <script/open-coverage.sh.dist> file and uncomment this line\033[0m'
+
+# Make sure the coverage folder has already been created,.
+# If not run the "npm run test:report" command once.
+# Then set up the file according to your OS :
+
+# WSL users :
+#   1 - Set the correct location of the coverage file bellow (index.html), if not sure open the file in your browser and copy the adress
+coverage_file=file://///wsl.localhost/<PATH-TO-PROJECT-DIR>/finest-todo-app/coverage/finest-todo-app/index.html
+
+#   2 - Set the browser executable location IN YOUR WINDOWS SYSTEM (tested only with chrome)
+#       Path should be relative to WSL tree, just replace "C:\" with "/mnt/c/" (or any other drive name)
+"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe" -args $coverage_file
+
+# OSX users : Comment every previous line and uncomment everything line bellow this comment
+
+# open --new -a "Google Chrome" --args "coverage/finest-todo-app/index.html"

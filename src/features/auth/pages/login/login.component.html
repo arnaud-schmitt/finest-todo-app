@@ -1,0 +1,19 @@
+<div class="page-wrapper" id="login-page">
+  <div class="page-content login-section card">
+    <h1 class="auth-main-title">Remember everything you have todo</h1>
+    <h2>{{title$ | async}}</h2>
+    <form [formGroup]="loginForm" novalidate class="login-form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="login-form-input">
+        <mat-label>Email adress</mat-label>
+        <input matInput formControlName="email" placeHolder="Email"/>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+          Value must be an <strong>email</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Validate</button>
+    </form>
+  </div>
+</div>

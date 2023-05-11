@@ -1,0 +1,18 @@
+@import 'variables.scss';
+
+.page-wrapper {
+  display: flex;
+  background-color: $background-primary;
+  justify-content: space-around;
+
+  .page-content {
+    width: $page-content-width-large;
+    background-color: $background-secondary;
+  }
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 32pt;
+  padding: 2rem;
+}
